@@ -1,13 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+{% extends 'news/layout.html' %}
+
+{% block title %}
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>News</title>
     {% load static %}
     <link rel="stylesheet" href="{% static 'news/style.css' %}">
-</head>
-<body>
+{% endblock %}
+
+{% block content %}
     <div class="container">
         <h1>News</h1>
         <a class="btn" href="{% url 'create_article' %}">Add news</a>
@@ -23,5 +24,5 @@
             {% endfor %}
         </ul>
     </div>
-</body>
 </html>
+{% endblock %}

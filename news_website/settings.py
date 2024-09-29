@@ -125,4 +125,5 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
+    'C:/Users/Каролина/OneDrive/Pulpit/news/news_website/static',
 ]

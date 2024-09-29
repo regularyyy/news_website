@@ -1,13 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+{% extends 'news/layout.html' %}
+
+{% block title %}
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% if form.instance.pk %}Update news{% else %}Add news{% endif %}</title>
     {% load static %}
     <link rel="stylesheet" href="{% static 'news/style.css' %}">
-</head>
-<body>
+{% endblock %}
+
+{% block content %}
     <div class="container">
         <h1>{% if form.instance.pk %}Update news{% else %}Add news{% endif %}</h1>
         <form method="post">
@@ -16,5 +17,5 @@
             <button type="submit">Save</button>
         </form>
     </div>
-</body>
 </html>
+{% endblock %}

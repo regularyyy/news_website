@@ -1,13 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+{% extends 'news/layout.html' %}
+
+{% block title %}
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ article.title }}</title>
     {% load static %}
     <link rel="stylesheet" href="{% static 'news/style.css' %}">
-</head>
-<body>
+{% endblock %}
+
+{% block content %}
     <div class="container">
         <h1>{{ article.title }}</h1>
         <div class="article-detail">
@@ -20,5 +21,5 @@
         <a class="btn" href="{% url 'delete_article' article.pk %}">Delete</a>
         <a class="btn" href="{% url 'article_list' %}">Back to Articles List</a>
     </div>
-</body>
 </html>
+{% endblock %}
