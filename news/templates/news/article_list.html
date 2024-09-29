@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'news/style.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>News</h1>
+        <a class="btn" href="{% url 'create_article' %}">Add news</a>
+        <ul>
+            {% for article in articles %}
+                <li>
+                    <a href="{% url 'article_detail' article.pk %}">{{ article.title }}</a>
+                    <span style="float: right;">
+                        <a class="btn" href="{% url 'update_article' article.pk %}">Update</a>
+                        <a class="btn" href="{% url 'delete_article' article.pk %}">Delete</a>
+                    </span>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>

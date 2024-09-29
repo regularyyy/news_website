@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ article.title }}</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'news/style.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>{{ article.title }}</h1>
+        <div class="article-detail">
+            <p>{{ article.content }}</p>
+            <p class="article-meta">
+                Author: {{ article.author }} | Published: {{ article.published_date }}
+            </p>
+        </div>
+        <a class="btn" href="{% url 'update_article' article.pk %}">Update</a>
+        <a class="btn" href="{% url 'delete_article' article.pk %}">Delete</a>
+        <a class="btn" href="{% url 'article_list' %}">Back to Articles List</a>
+    </div>
+</body>
+</html>
